@@ -16,13 +16,14 @@ import "fmt"
 func main() {
 	storage := map[string]string{}
 	fmt.Println("___ Приложение для хранения закладок ___")
+Menu:
 	for {
 		fmt.Println("Выберите опцию: 1 - Просмотр всех 2 - Добавить закладку 3 - Удалить закладку 4 - Выход")
 		var op int
 		fmt.Scan(&op)
 		switch op {
 		case 4:
-			return
+			break Menu
 		case 1: 
 			printAll(storage)
 		case 2:
