@@ -16,6 +16,12 @@ import "fmt"
 type bookmarkMap map[string]string
 
 func main() {
+	m := make(bookmarkMap, 3)
+	m["A"] = "1"
+	m["B"] = "2"
+	m["C"] = "3"
+	fmt.Println("Len map: ", len(m))
+
 	storage := bookmarkMap{}
 	fmt.Println("___ Приложение для хранения закладок ___")
 Menu:
