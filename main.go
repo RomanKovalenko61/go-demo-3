@@ -13,8 +13,10 @@ package main
 
 import "fmt"
 
+type bookmarkMap map[string]string
+
 func main() {
-	storage := map[string]string{}
+	storage := bookmarkMap{}
 	fmt.Println("___ Приложение для хранения закладок ___")
 Menu:
 	for {
@@ -36,7 +38,7 @@ Menu:
 	}	
 }
 
-func add(storage map[string]string) {
+func add(storage bookmarkMap) {
 	fmt.Println("Функция добавления закладки")
 	fmt.Println("Введите название адреса")
 	var name string
@@ -48,7 +50,7 @@ func add(storage map[string]string) {
 	fmt.Println("Закладка добавлена")
 }
 
-func remove(storage map[string]string) {
+func remove(storage bookmarkMap) {
 	fmt.Println("Функция удаления закладки")
 	fmt.Println("Введите название адреса")
 	var name string
@@ -57,7 +59,7 @@ func remove(storage map[string]string) {
 	fmt.Println("Закладка удалена")
 }
 
-func printAll(storage map[string]string) {
+func printAll(storage bookmarkMap) {
 	fmt.Println("Функция вывода всех закладок")
 	fmt.Printf("Количество закладок: %v\n", len(storage))
 	for key, value := range storage {
